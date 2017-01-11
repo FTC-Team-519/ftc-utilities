@@ -104,11 +104,8 @@ public abstract class ActiveOpMode extends LinearOpMode {
      */
     public void clearTelemetryData() {
         telemetry.clearAll();
-        try {
-            if (opModeIsActive()) {
-                idle();
-            }
-        } catch (InterruptedException e) {
+        if (opModeIsActive()) {
+            idle();
         }
     }
 
